@@ -1,6 +1,6 @@
 import streamlit as st
 from tracker import calculate_metrics
-from visualization import visualize_portfolio, export_to_html
+from visualization import visualize_portfolio_matplotlib, visualize_portfolio_plotly
 import yfinance as yf
 
 def validate_ticker(ticker):
@@ -82,11 +82,11 @@ def main():
         st.write(f"Total Portfolio Value: ${total_value:.2f}")
 
         # Visualization
-        visualize_portfolio(results)
+        st.subheader("Portfolio Visualization (Matplotlib)")
+        visualize_portfolio_matplotlib(results)
 
-        # Export to HTML
-        export_to_html(results)
-        st.success("Portfolio visualization exported to `portfolio_allocation.html`!")
+        st.subheader("Portfolio Visualization (Plotly)")
+        visualize_portfolio_plotly(results)
 
 if __name__ == "__main__":
     main()
