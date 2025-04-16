@@ -19,5 +19,10 @@ Note: This app is hosted on Streamlit’s  cloud platform and may take a few sec
 - Matplotlib    
 - yfinance
 
+## License & Usage
+
+This project is provided for demonstration purposes only.  
+Please do not copy or redistribute without permission.  
+
 ## Streamlit
 https://investmentportfoliotrackerbyyouss.streamlit.app
