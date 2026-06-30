@@ -1,28 +1,98 @@
 # Investment Portfolio Tracker
 
-An interactive web application built with Python and Streamlit that allows users to track the real-time value of their investment portfolios by inputting stock tickers, purchase prices, and quantities. The tool calculates gains/losses and visualizes portfolio allocation using live market data.
+An interactive web application built with Python and Streamlit that allows users to track the real-time value of their investment portfolios by inputting stock tickers, purchase prices, and quantities. The tool validates tickers, fetches live market data, calculates gains/losses, and visualizes portfolio allocation using interactive charts.
 
-Note: This app is hosted on Streamlit’s  cloud platform and may take a few seconds to load if inactive.
+**Note:** This app is hosted on Streamlit's cloud platform and may take a few seconds to load if inactive.
+
+**Live App:** https://investmentportfoliotrackerbyyouss.streamlit.app
 
 ## Features
 
-- Input stock ticker, purchase price, and quantity owned
-- Retrieve real-time stock prices using the `yfinance` API
-- Calculate current portfolio value and unrealized gains/losses
-- Visualize portfolio distribution with pie charts using Matplotlib
-- Simple, responsive interface built with Streamlit
+- **Ticker Validation** - Validates stock tickers against Yahoo Finance before adding them to the portfolio
+- - **Real-Time Pricing** - Fetches live stock prices using the `yfinance` API and displays the current price as you type a ticker
+  - - **Multi-Stock Portfolio** - Add multiple stocks to your portfolio within a single session using Streamlit session state
+    - - **Gain/Loss Calculation** - Calculates current portfolio value and unrealized gains/losses per stock based on purchase price and quantity
+      - - **Interactive Pie Chart** - Visualizes portfolio allocation by value using an interactive Plotly pie chart rendered inside the Streamlit app
+        - - **Simple, Responsive Interface** - Clean UI built with Streamlit, accessible from any browser
+         
+          - ## How It Works
+         
+          - Step 1: Enter a stock ticker symbol (e.g. `AAPL`, `TSLA`, `MSFT`) in the input field.
+         
+          - Step 2: The app fetches and displays the current market price for that ticker.
+         
+          - Step 3: Enter the quantity of shares you own and the price you originally paid per share.
+         
+          - Step 4: Click **"Add to Portfolio"** to save the stock to your session.
+         
+          - Step 5: Repeat for as many stocks as you like.
+         
+          - Step 6: Click **"Calculate Metrics"** to see a summary of current values and gains/losses, along with a portfolio allocation pie chart.
+         
+          - ## Project Structure
+         
+          - ```
+            InvestmentPortfolioTrack/
+            ├── main.py             # Streamlit app entry point - UI, session state, user input flow
+            ├── tracker.py          # Core logic - fetches stock data and calculates portfolio metrics
+            ├── visualization.py    # Plotly pie chart rendering inside Streamlit
+            ├── requirements.txt    # Python dependencies
+            └── .devcontainer/      # Dev Container configuration for VS Code / GitHub Codespaces
+            ```
 
-## Elements Used
+            ## Tech Stack
 
-- Python  
-- Streamlit  
-- Matplotlib    
-- yfinance
+            | Technology | Purpose |
+            |------------|---------|
+            | Python | Core programming language |
+            | Streamlit | Web application framework and UI |
+            | yfinance | Real-time stock data retrieval from Yahoo Finance |
+            | Plotly | Interactive portfolio allocation pie chart |
+            | Matplotlib | Listed as a dependency (available for future use) |
 
-## License & Usage
+            ## Installation and Local Setup
 
-This project is provided for demonstration purposes only.  
-Please do not copy or redistribute without permission.  
+            ### Prerequisites
 
-## Streamlit
-https://investmentportfoliotrackerbyyouss.streamlit.app
+            - Python 3.8 or higher
+            - - pip
+             
+              - ### Steps
+             
+              - ```bash
+                # 1. Clone the repository
+                git clone https://github.com/youssdiagana/InvestmentPortfolioTrack.git
+                cd InvestmentPortfolioTrack
+
+                # 2. Install dependencies
+                pip install -r requirements.txt
+
+                # 3. Run the Streamlit app
+                streamlit run main.py
+                ```
+
+                The app will open in your browser at `http://localhost:8501`.
+
+                ### Dev Container (Optional)
+
+                This project includes a `.devcontainer` configuration for use with VS Code Dev Containers or GitHub Codespaces. Open the repository in either environment and it will automatically set up the development environment.
+
+                ## Dependencies
+
+                ```
+                streamlit
+                yfinance
+                matplotlib
+                plotly
+                ```
+
+                Install all dependencies with:
+
+                ```bash
+                pip install -r requirements.txt
+                ```
+
+                ## License and Usage
+
+                This project is provided for demonstration purposes only.
+                Please do not copy or redistribute without permission.
