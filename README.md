@@ -3,7 +3,7 @@
 
 **Note:** This app is hosted on Streamlit's cloud platform and may take a few seconds to load if inactive.
 
-🔗 **Live Demo:** https://investmentportfoliotrackerbyyouss.streamlit.app
+🔗 **Live Demo:** investmentportfoliotrackerbyyouss.streamlit.app
 
 ---
 
